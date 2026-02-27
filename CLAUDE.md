@@ -9,9 +9,7 @@ This file provides guidance for AI assistants (Claude and others) working in thi
 **Organization:** SENIDECO
 **Repository:** GG
 **Remote:** `http://local_proxy@127.0.0.1:29822/git/SENIDECO/GG`
-**Status:** Freshly initialized — no source code committed yet.
-
-> **Note for AI assistants:** This repository is empty. Update this file as the project evolves — add language/framework details, directory layout, test commands, and conventions as they are established.
+**Status:** FinanceMaster — Application complète de gestion de budget personnel (React + Vite).
 
 ---
 
@@ -54,32 +52,54 @@ Update CLAUDE.md with test commands
 
 ## Development Setup
 
-> **TODO:** Fill in once the project stack is decided.
+**Stack:** React 18 + Vite 5 · CSS custom (no UI framework) · localStorage
 
 ```bash
 # Install dependencies
-# <command here>
+npm install
 
-# Start development server / run the app
-# <command here>
+# Start development server
+npm run dev
 
-# Run linter
-# <command here>
+# Build for production
+npm run build
 
-# Run tests
-# <command here>
+# Preview production build
+npm run preview
 ```
 
 ---
 
 ## Project Structure
 
-> **TODO:** Update once source files are added.
-
 ```
 GG/
-├── CLAUDE.md          # This file
-└── ...                # Project files to be added
+├── CLAUDE.md
+├── index.html
+├── package.json
+├── vite.config.js
+├── public/
+│   └── favicon.svg
+└── src/
+    ├── main.jsx            # Entry point
+    ├── App.jsx             # Root component + client-side routing
+    ├── context/
+    │   └── AppContext.jsx  # Global state (React Context)
+    ├── components/
+    │   ├── Navbar.jsx
+    │   ├── MonthPicker.jsx
+    │   └── TransactionModal.jsx
+    ├── pages/
+    │   ├── Dashboard.jsx   # Tableau de bord
+    │   ├── Transactions.jsx
+    │   ├── Budget.jsx
+    │   ├── Reports.jsx
+    │   └── Settings.jsx
+    ├── utils/
+    │   ├── storage.js      # localStorage helpers + defaults
+    │   └── format.js       # Formatting helpers + CSV export
+    └── styles/
+        └── global.css
 ```
 
 ---
@@ -132,4 +152,4 @@ When working in this repository:
 
 ---
 
-*Last updated: 2026-02-27 — Initial creation (empty repository state)*
+*Last updated: 2026-02-27 — FinanceMaster v1.0 added (React + Vite budget app)*
